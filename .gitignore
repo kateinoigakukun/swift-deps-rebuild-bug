@@ -1,3 +1,4 @@
-ToyboxPackage/Sources/ToyboxCore/Debug.swift
+AppPackage/Sources/ToyboxCore/Debug.swift
+AppPackage/Package.swift
 *.log
 /.build.*

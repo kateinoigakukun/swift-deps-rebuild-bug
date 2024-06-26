@@ -11,15 +11,21 @@ let package = Package(
             targets: ["codegen"]
         )
     ],
-    dependencies: [
-        .package(path: "../ToyboxPackage")
-    ],
     targets: [
+        .target(
+            name: "ToyboxCore"
+        ),
+        .target(
+            name: "ToyboxModule",
+            dependencies: [
+                .target(name: "ToyboxCore")
+            ]
+        ),
         .target(
             name: "AppModule",
             dependencies: [
-                .product(name: "ToyboxCore", package: "ToyboxPackage"),
-                .product(name: "ToyboxModule", package: "ToyboxPackage")
+                "ToyboxCore",
+                "ToyboxModule"
             ]
         ),
         .executableTarget(
