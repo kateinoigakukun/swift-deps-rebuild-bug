@@ -4,18 +4,13 @@ set -ue
 set -x
 pwd
 
-cd AppPackage
-swift package clean
-swift build
-cd ..
+rm -rf AppPackage/.build
+cp Debug.step1.swift ToyboxPackage/Sources/ToyboxCore/Debug.swift
 
-cd ToyboxPackage/Sources/ToyboxCore
+swift build --package-path ./AppPackage
 
 # Source compatible change
-sed 's/a: Int = 0/a: Int = 0, b: Int = 0/' Debug.swift > Debug.2.swift
-mv -f Debug.2.swift Debug.swift
-
-cd ../../../AppPackage
+cp Debug.step2.swift ToyboxPackage/Sources/ToyboxCore/Debug.swift
 
 # Curious link error
-swift build
+swift build --package-path ./AppPackage
