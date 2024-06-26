@@ -24,7 +24,6 @@ let package = Package(
         .executableTarget(
             name: "codegen",
             dependencies: [
-                .product(name: "ToyboxCore", package: "ToyboxPackage"),
                 .target(name: "AppModule")
             ]
         )

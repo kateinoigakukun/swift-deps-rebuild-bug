@@ -1,3 +1,0 @@
-import AppModule
-
-App().main()
