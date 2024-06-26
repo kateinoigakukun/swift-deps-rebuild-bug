@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ue
+set -ue -o pipefail
 
 set -x
 pwd
