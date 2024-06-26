@@ -1,4 +1,3 @@
-import ToyboxModule
 import ToyboxCore
 
 public struct App {
