@@ -1,2 +1,3 @@
 ToyboxPackage/Sources/ToyboxCore/Debug.swift
 *.log
+/.build.*
